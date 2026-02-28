@@ -1,14 +1,14 @@
 # 多阶段构建：第一阶段编译
 FROM maven:3.8-openjdk-17 as builder
 
-WORKDIR /build
+WORKDIR /app
 
-# 复制 pom.xml 和 src - 这是针对 PetBrainBackend 独立仓库
-COPY pom.xml ./
+# 复制 pom.xml 和 src
+COPY pom.xml .
 COPY src ./src
 
 # 编译项目
-RUN mvn clean package -DskipTests
+RUN mvn -DskipTests -q clean package
 
 # 多阶段构建：第二阶段运行
 FROM openjdk:17-jdk-slim
@@ -16,7 +16,7 @@ FROM openjdk:17-jdk-slim
 WORKDIR /app
 
 # 从第一阶段复制编译好的 JAR 文件
-COPY --from=builder /build/target/aipetbrain-backend-1.0.0.jar ./app.jar
+COPY --from=builder /app/target/aipetbrain-backend-1.0.0.jar ./app.jar
 
 # 创建上传文件夹
 RUN mkdir -p /app/uploads
