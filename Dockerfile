@@ -1,12 +1,11 @@
 # 多阶段构建：第一阶段编译
 FROM maven:3.8-openjdk-17 as builder
 
-# 设置工作目录
 WORKDIR /build
 
-# 复制 pom.xml 和 src
-COPY backend/pom.xml ./
-COPY backend/src ./src
+# 复制 pom.xml 和 src - 这是针对 PetBrainBackend 独立仓库
+COPY pom.xml ./
+COPY src ./src
 
 # 编译项目
 RUN mvn clean package -DskipTests
