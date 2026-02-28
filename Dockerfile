@@ -1,5 +1,5 @@
 # 多阶段构建：第一阶段编译
-FROM maven:3.9.6-openjdk-17 as builder
+FROM maven:3.8-openjdk-17 as builder
 
 # 设置工作目录
 WORKDIR /build
