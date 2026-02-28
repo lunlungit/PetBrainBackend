@@ -4,13 +4,11 @@ FROM maven:3.8-openjdk-17 as builder
 # 设置工作目录
 WORKDIR /build
 
-# 复制整个项目
-COPY . .
+# 复制 pom.xml 和 src
+COPY backend/pom.xml ./
+COPY backend/src ./src
 
-# 进入 backend 目录并编译项目
-WORKDIR /build/backend
-
-# 下载依赖并编译
+# 编译项目
 RUN mvn clean package -DskipTests
 
 # 多阶段构建：第二阶段运行
@@ -19,7 +17,7 @@ FROM openjdk:17-jdk-slim
 WORKDIR /app
 
 # 从第一阶段复制编译好的 JAR 文件
-COPY --from=builder /build/backend/target/aipetbrain-backend-1.0.0.jar ./app.jar
+COPY --from=builder /build/target/aipetbrain-backend-1.0.0.jar ./app.jar
 
 # 创建上传文件夹
 RUN mkdir -p /app/uploads
