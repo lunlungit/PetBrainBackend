@@ -30,7 +30,7 @@ huggingface:
 # 微信小程序配置
 wechat:
   # 小程序AppID（在微信小程序后台获取）
-  appid: wx94f249f0cb4b808a
+  appid: ${WECHAT_APPID}
   # 小程序AppSecret（在微信小程序后台获取）
   secret: ${WECHAT_SECRET}
 
@@ -48,9 +48,9 @@ file:
 # 腾讯云 COS 配置
 cos:
   enabled: true
-  region: ap-shanghai
-  bucket: 7072-prod-3g9hh2o12b693899-1404690039
+  region: ${COS_REGION:ap-shanghai}
+  bucket: ${COS_BUCKET}
   secret-id: ${COS_SECRET_ID}
   secret-key: ${COS_SECRET_KEY}
-  cdn-url: https://7072-prod-3g9hh2o12b693899-1404690039.cos.ap-shanghai.myqcloud.com
+  cdn-url: ${COS_CDN_URL}
 

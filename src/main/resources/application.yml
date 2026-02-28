@@ -60,9 +60,9 @@ app:
 # Hugging Face AI配置
 huggingface:
   # API Token（在 https://huggingface.co/settings/tokens 生成）
-  api-token: ${HUGGINGFACE_API_TOKEN}
+  api-token: ${HUGGINGFACE_API_TOKEN:hf_placeholder}
   # 是否启用真实AI（false=使用模拟数据，true=调用HuggingFace API）
-  enabled: true
+  enabled: false
   # 模型配置 - 使用稳定可靠的模型
   pet-model: google/vit-base-patch16-224
   object-model: facebook/detr-resnet50
@@ -70,7 +70,16 @@ huggingface:
 # 微信小程序配置
 wechat:
   # 小程序AppID（在微信小程序后台获取）
-  appid: ${WECHAT_APPID}
+  appid: ${WECHAT_APPID:wx_placeholder}
   # 小程序AppSecret（在微信小程序后台获取）
-  secret: ${WECHAT_SECRET}
+  secret: ${WECHAT_SECRET:secret_placeholder}
+
+# 腾讯云 COS 配置
+cos:
+  enabled: false
+  region: ${COS_REGION:ap-shanghai}
+  bucket: ${COS_BUCKET:placeholder}
+  secret-id: ${COS_SECRET_ID:placeholder}
+  secret-key: ${COS_SECRET_KEY:placeholder}
+  cdn-url: ${COS_CDN_URL:}
 
