@@ -3,12 +3,11 @@ FROM openjdk:17-jdk-slim as builder
 
 WORKDIR /build
 
-# 复制 pom.xml 和源代码
-COPY backend/pom.xml ./
-COPY backend/src ./src
+# 复制整个 backend 目录
+COPY . .
 
-# 编译项目
-RUN apt-get update && apt-get install -y maven && \
+# 进入 backend 目录并编译项目
+RUN cd backend && apt-get update && apt-get install -y maven && \
     mvn clean package -DskipTests
 
 # 多阶段构建：第二阶段运行
@@ -17,7 +16,7 @@ FROM openjdk:17-jdk-slim
 WORKDIR /app
 
 # 从第一阶段复制编译好的 JAR 文件
-COPY --from=builder /build/target/aipetbrain-backend-1.0.0.jar ./app.jar
+COPY --from=builder /build/backend/target/aipetbrain-backend-1.0.0.jar ./app.jar
 
 # 创建上传文件夹
 RUN mkdir -p /app/uploads
