@@ -1,0 +1,495 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.0)
+
+2026-02-13T22:38:33.113+08:00  INFO 20705 --- [aipetbrain] [           main] com.aipetbrain.AIPetBrainApplication     : Starting AIPetBrainApplication v1.0.0 using Java 17.0.18 with PID 20705 (/Users/lunlundemac/repos-ai/AIPetBrainLun/backend/target/aipetbrain-backend-1.0.0.jar started by lunlundemac in /Users/lunlundemac/repos-ai/AIPetBrainLun/backend)
+2026-02-13T22:38:33.114+08:00  INFO 20705 --- [aipetbrain] [           main] com.aipetbrain.AIPetBrainApplication     : No active profile set, falling back to 1 default profile: "default"
+2026-02-13T22:38:33.540+08:00  INFO 20705 --- [aipetbrain] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-02-13T22:38:33.541+08:00  INFO 20705 --- [aipetbrain] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-02-13T22:38:33.555+08:00  INFO 20705 --- [aipetbrain] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2026-02-13T22:38:33.804+08:00  INFO 20705 --- [aipetbrain] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-02-13T22:38:33.809+08:00  INFO 20705 --- [aipetbrain] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-02-13T22:38:33.809+08:00  INFO 20705 --- [aipetbrain] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2026-02-13T22:38:33.828+08:00  INFO 20705 --- [aipetbrain] [           main] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring embedded WebApplicationContext
+2026-02-13T22:38:33.829+08:00  INFO 20705 --- [aipetbrain] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 671 ms
+Logging initialized using 'class org.apache.ibatis.logging.stdout.StdOutImpl' adapter.
+Initialization Sequence datacenterId:17 workerId:24
+ _ _   |_  _ _|_. ___ _ |    _ 
+| | |\/|_)(_| | |_\  |_)||_|_\ 
+     /               |         
+                        3.5.5 
+2026-02-13T22:38:34.490+08:00  INFO 20705 --- [aipetbrain] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/api'
+2026-02-13T22:38:34.494+08:00  INFO 20705 --- [aipetbrain] [           main] com.aipetbrain.AIPetBrainApplication     : Started AIPetBrainApplication in 1.566 seconds (process running for 1.796)
+
+========================================
+  🐾 AIPetBrain 启动成功！
+  🚀 服务器运行在: http://localhost:8080/api
+  📱 宠物社区微信小程序后端服务已就绪
+========================================
+
+2026-02-13T22:45:04.716+08:00  INFO 20705 --- [aipetbrain] [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-13T22:45:04.717+08:00  INFO 20705 --- [aipetbrain] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-02-13T22:45:04.720+08:00  INFO 20705 --- [aipetbrain] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@e9e3beb] was not registered for synchronization because synchronization is not active
+2026-02-13T22:45:04.763+08:00  INFO 20705 --- [aipetbrain] [nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-02-13T22:45:05.965+08:00  INFO 20705 --- [aipetbrain] [nio-8080-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@96e3c7d
+2026-02-13T22:45:05.967+08:00  INFO 20705 --- [aipetbrain] [nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+JDBC Connection [HikariProxyConnection@1031696184 wrapping com.mysql.cj.jdbc.ConnectionImpl@96e3c7d] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,name,avatar,type,breed,birthday,weight,gender,sterilized,color,status,create_time,update_time,deleted FROM pet WHERE deleted=0 AND (status = ? AND deleted = ?) ORDER BY create_time DESC LIMIT 5
+==> Parameters: 2(Integer), 0(Integer)
+<==      Total: 0
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@e9e3beb]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@511eed7b] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@532252550 wrapping com.mysql.cj.jdbc.ConnectionImpl@96e3c7d] will not be managed by Spring
+==>  Preparing: SELECT id,openid,nickname,avatar,phone,gender,create_time,update_time,deleted FROM user_info WHERE deleted=0 AND (openid = ?)
+==> Parameters: mock_openid_1770994161056(String)
+<==      Total: 0
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@511eed7b]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6a5fa905] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1410707286 wrapping com.mysql.cj.jdbc.ConnectionImpl@96e3c7d] will not be managed by Spring
+==>  Preparing: INSERT INTO user_info ( openid, nickname, avatar, gender, create_time, update_time ) VALUES ( ?, ?, ?, ?, ?, ? )
+==> Parameters: mock_openid_1770994161056(String), 宠物主人(String), https://cdn-icons-png.flaticon.com/512/3048/3048122.png(String), 0(Integer), 2026-02-13T22:49:21.138440(LocalDateTime), 2026-02-13T22:49:21.141450(LocalDateTime)
+<==    Updates: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6a5fa905]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@35fbaf59] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1271705599 wrapping com.mysql.cj.jdbc.ConnectionImpl@96e3c7d] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,name,avatar,type,breed,birthday,weight,gender,sterilized,color,status,create_time,update_time,deleted FROM pet WHERE deleted=0 AND (user_id = ?) ORDER BY create_time DESC
+==> Parameters: 10(Long)
+<==      Total: 0
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@35fbaf59]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7a21634d] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@2002486674 wrapping com.mysql.cj.jdbc.ConnectionImpl@96e3c7d] will not be managed by Spring
+==>  Preparing: UPDATE user_info SET nickname=?, avatar=?, gender=?, update_time=? WHERE id=? AND deleted=0
+==> Parameters: 宠物主人(String), https://cdn-icons-png.flaticon.com/512/3048/3048122.png(String), 0(Integer), 2026-02-13T22:49:26.375328(LocalDateTime), 10(Long)
+<==    Updates: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7a21634d]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6ea5740f] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1617069995 wrapping com.mysql.cj.jdbc.ConnectionImpl@96e3c7d] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,name,avatar,type,breed,birthday,weight,gender,sterilized,color,status,create_time,update_time,deleted FROM pet WHERE deleted=0 AND (user_id = ?) ORDER BY create_time DESC
+==> Parameters: 10(Long)
+<==      Total: 0
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6ea5740f]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1cb20c00] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1504739826 wrapping com.mysql.cj.jdbc.ConnectionImpl@96e3c7d] will not be managed by Spring
+==>  Preparing: SELECT id,pet_id,user_id,hospital,doctor,diagnosis,symptoms,prescription,cost,visit_date,images,create_time,update_time,deleted FROM medical_record WHERE deleted=0 AND (pet_id = ?) ORDER BY visit_date DESC
+==> Parameters: 1(Long)
+<==      Total: 0
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1cb20c00]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@409a25b9] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@258001377 wrapping com.mysql.cj.jdbc.ConnectionImpl@96e3c7d] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,name,avatar,type,breed,birthday,weight,gender,sterilized,color,status,create_time,update_time,deleted FROM pet WHERE deleted=0 AND (user_id = ?) ORDER BY create_time DESC
+==> Parameters: 10(Long)
+<==      Total: 0
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@409a25b9]
+2026-02-13T22:49:56.811+08:00  WARN 20705 --- [aipetbrain] [nio-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.math.BigDecimal'; Character n is neither a decimal digit number, decimal point, nor "e" notation exponential mark.]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@129cb058] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@475745403 wrapping com.mysql.cj.jdbc.ConnectionImpl@96e3c7d] will not be managed by Spring
+==>  Preparing: SELECT id,openid,nickname,avatar,phone,gender,create_time,update_time,deleted FROM user_info WHERE deleted=0 AND (openid = ?)
+==> Parameters: mock_openid_1770994340706(String)
+<==      Total: 0
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@129cb058]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6cf19a7a] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1391636823 wrapping com.mysql.cj.jdbc.ConnectionImpl@96e3c7d] will not be managed by Spring
+==>  Preparing: INSERT INTO user_info ( openid, nickname, avatar, gender, create_time, update_time ) VALUES ( ?, ?, ?, ?, ?, ? )
+==> Parameters: mock_openid_1770994340706(String), 宠物主人(String), https://cdn-icons-png.flaticon.com/512/3048/3048122.png(String), 0(Integer), 2026-02-13T22:52:20.875341(LocalDateTime), 2026-02-13T22:52:20.875902(LocalDateTime)
+<==    Updates: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6cf19a7a]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@44447956] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1250140078 wrapping com.mysql.cj.jdbc.ConnectionImpl@96e3c7d] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,name,avatar,type,breed,birthday,weight,gender,sterilized,color,status,create_time,update_time,deleted FROM pet WHERE deleted=0 AND (user_id = ?) ORDER BY create_time DESC
+==> Parameters: 11(Long)
+<==      Total: 0
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@44447956]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@46f645b9] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@139414277 wrapping com.mysql.cj.jdbc.ConnectionImpl@96e3c7d] will not be managed by Spring
+==>  Preparing: UPDATE user_info SET nickname=?, avatar=?, gender=?, update_time=? WHERE id=? AND deleted=0
+==> Parameters: 宠物主人(String), https://cdn-icons-png.flaticon.com/512/3048/3048122.png(String), 0(Integer), 2026-02-13T22:52:26.765969(LocalDateTime), 11(Long)
+<==    Updates: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@46f645b9]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3287a033] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@339355637 wrapping com.mysql.cj.jdbc.ConnectionImpl@96e3c7d] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,name,avatar,type,breed,birthday,weight,gender,sterilized,color,status,create_time,update_time,deleted FROM pet WHERE deleted=0 AND (user_id = ?) ORDER BY create_time DESC
+==> Parameters: 11(Long)
+<==      Total: 0
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3287a033]
+2026-02-13T22:52:29.969+08:00  WARN 20705 --- [aipetbrain] [nio-8080-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.math.BigDecimal'; Character n is neither a decimal digit number, decimal point, nor "e" notation exponential mark.]
+2026-02-13T22:53:25.571+08:00  WARN 20705 --- [aipetbrain] [nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.math.BigDecimal'; Character n is neither a decimal digit number, decimal point, nor "e" notation exponential mark.]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@215f8d90] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1679790264 wrapping com.mysql.cj.jdbc.ConnectionImpl@96e3c7d] will not be managed by Spring
+==>  Preparing: SELECT id,openid,nickname,avatar,phone,gender,create_time,update_time,deleted FROM user_info WHERE deleted=0 AND (openid = ?)
+==> Parameters: mock_openid_1770994853370(String)
+<==      Total: 0
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@215f8d90]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1c1e4fc1] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1083570445 wrapping com.mysql.cj.jdbc.ConnectionImpl@96e3c7d] will not be managed by Spring
+==>  Preparing: INSERT INTO user_info ( openid, nickname, avatar, gender, create_time, update_time ) VALUES ( ?, ?, ?, ?, ?, ? )
+==> Parameters: mock_openid_1770994853370(String), 宠物主人(String), https://cdn-icons-png.flaticon.com/512/3048/3048122.png(String), 0(Integer), 2026-02-13T23:00:53.456434(LocalDateTime), 2026-02-13T23:00:53.457387(LocalDateTime)
+<==    Updates: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1c1e4fc1]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@68a31fd9] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1694358721 wrapping com.mysql.cj.jdbc.ConnectionImpl@96e3c7d] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,name,avatar,type,breed,birthday,weight,gender,sterilized,color,status,create_time,update_time,deleted FROM pet WHERE deleted=0 AND (user_id = ?) ORDER BY create_time DESC
+==> Parameters: 12(Long)
+<==      Total: 0
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@68a31fd9]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3e25c148] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1160848708 wrapping com.mysql.cj.jdbc.ConnectionImpl@96e3c7d] will not be managed by Spring
+==>  Preparing: UPDATE user_info SET nickname=?, avatar=?, gender=?, update_time=? WHERE id=? AND deleted=0
+==> Parameters: 宠物主人(String), https://cdn-icons-png.flaticon.com/512/3048/3048122.png(String), 0(Integer), 2026-02-13T23:00:58.084839(LocalDateTime), 12(Long)
+<==    Updates: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3e25c148]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@42bb72f1] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@173072499 wrapping com.mysql.cj.jdbc.ConnectionImpl@96e3c7d] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,name,avatar,type,breed,birthday,weight,gender,sterilized,color,status,create_time,update_time,deleted FROM pet WHERE deleted=0 AND (user_id = ?) ORDER BY create_time DESC
+==> Parameters: 12(Long)
+<==      Total: 0
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@42bb72f1]
+2026-02-13T23:01:18.729+08:00  WARN 20705 --- [aipetbrain] [nio-8080-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.math.BigDecimal'; Character n is neither a decimal digit number, decimal point, nor "e" notation exponential mark.]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7cacc2d7] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@513427623 wrapping com.mysql.cj.jdbc.ConnectionImpl@96e3c7d] will not be managed by Spring
+==>  Preparing: INSERT INTO pet ( user_id, name, avatar, type, breed, birthday, gender, sterilized, color, create_time, update_time ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )
+==> Parameters: 12(Long), 11(String), (String), 1(Integer), 11(String), 2026-02-13(LocalDate), 0(Integer), 0(Integer), (String), 2026-02-13T23:01:29.925805(LocalDateTime), 2026-02-13T23:01:29.927943(LocalDateTime)
+<==    Updates: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7cacc2d7]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2bfc722d] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1599287654 wrapping com.mysql.cj.jdbc.ConnectionImpl@96e3c7d] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,name,avatar,type,breed,birthday,weight,gender,sterilized,color,status,create_time,update_time,deleted FROM pet WHERE deleted=0 AND (user_id = ?) ORDER BY create_time DESC
+==> Parameters: 12(Long)
+<==    Columns: id, user_id, name, avatar, type, breed, birthday, weight, gender, sterilized, color, status, create_time, update_time, deleted
+<==        Row: 3, 12, 11, , 1, 11, 2026-02-13, null, 0, 0, , 0, 2026-02-13 23:01:30, 2026-02-13 23:01:30, 0
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2bfc722d]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5c113f57] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1394117342 wrapping com.mysql.cj.jdbc.ConnectionImpl@96e3c7d] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,name,avatar,type,breed,birthday,weight,gender,sterilized,color,status,create_time,update_time,deleted FROM pet WHERE deleted=0 AND (user_id = ?) ORDER BY create_time DESC
+==> Parameters: 12(Long)
+<==    Columns: id, user_id, name, avatar, type, breed, birthday, weight, gender, sterilized, color, status, create_time, update_time, deleted
+<==        Row: 3, 12, 11, , 1, 11, 2026-02-13, null, 0, 0, , 0, 2026-02-13 23:01:30, 2026-02-13 23:01:30, 0
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5c113f57]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@35f5d778] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1549610413 wrapping com.mysql.cj.jdbc.ConnectionImpl@96e3c7d] will not be managed by Spring
+==>  Preparing: SELECT id,openid,nickname,avatar,phone,gender,create_time,update_time,deleted FROM user_info WHERE deleted=0 AND (openid = ?)
+==> Parameters: mock_openid_1770995261047(String)
+<==      Total: 0
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@35f5d778]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7cc2512d] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@753292083 wrapping com.mysql.cj.jdbc.ConnectionImpl@96e3c7d] will not be managed by Spring
+==>  Preparing: INSERT INTO user_info ( openid, nickname, avatar, gender, create_time, update_time ) VALUES ( ?, ?, ?, ?, ?, ? )
+==> Parameters: mock_openid_1770995261047(String), 宠物主人(String), https://cdn-icons-png.flaticon.com/512/3048/3048122.png(String), 0(Integer), 2026-02-13T23:07:41.161869(LocalDateTime), 2026-02-13T23:07:41.163485(LocalDateTime)
+<==    Updates: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7cc2512d]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2756e004] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@757113184 wrapping com.mysql.cj.jdbc.ConnectionImpl@96e3c7d] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,name,avatar,type,breed,birthday,weight,gender,sterilized,color,status,create_time,update_time,deleted FROM pet WHERE deleted=0 AND (user_id = ?) ORDER BY create_time DESC
+==> Parameters: 13(Long)
+<==      Total: 0
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2756e004]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2bafc544] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@557181988 wrapping com.mysql.cj.jdbc.ConnectionImpl@96e3c7d] will not be managed by Spring
+==>  Preparing: UPDATE user_info SET nickname=?, avatar=?, gender=?, update_time=? WHERE id=? AND deleted=0
+==> Parameters: 宠物主人(String), https://cdn-icons-png.flaticon.com/512/3048/3048122.png(String), 0(Integer), 2026-02-13T23:07:46.453029(LocalDateTime), 13(Long)
+<==    Updates: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2bafc544]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7d6d0e05] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1795272000 wrapping com.mysql.cj.jdbc.ConnectionImpl@96e3c7d] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,name,avatar,type,breed,birthday,weight,gender,sterilized,color,status,create_time,update_time,deleted FROM pet WHERE deleted=0 AND (user_id = ?) ORDER BY create_time DESC
+==> Parameters: 13(Long)
+<==      Total: 0
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7d6d0e05]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2939ea0b] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@806107431 wrapping com.mysql.cj.jdbc.ConnectionImpl@96e3c7d] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,name,avatar,type,breed,birthday,weight,gender,sterilized,color,status,create_time,update_time,deleted FROM pet WHERE deleted=0 AND (user_id = ?) ORDER BY create_time DESC
+==> Parameters: 13(Long)
+<==      Total: 0
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2939ea0b]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@ec9d980] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1240905991 wrapping com.mysql.cj.jdbc.ConnectionImpl@96e3c7d] will not be managed by Spring
+==>  Preparing: SELECT id,pet_id,user_id,hospital,doctor,diagnosis,symptoms,prescription,cost,visit_date,images,create_time,update_time,deleted FROM medical_record WHERE deleted=0 AND (pet_id = ?) ORDER BY visit_date DESC
+==> Parameters: 1(Long)
+<==      Total: 0
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@ec9d980]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6f1e2fcd] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1348504431 wrapping com.mysql.cj.jdbc.ConnectionImpl@96e3c7d] will not be managed by Spring
+==>  Preparing: SELECT id,openid,nickname,avatar,phone,gender,create_time,update_time,deleted FROM user_info WHERE deleted=0 AND (openid = ?)
+==> Parameters: mock_openid_1770995395120(String)
+<==      Total: 0
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6f1e2fcd]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@a20838f] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@350139713 wrapping com.mysql.cj.jdbc.ConnectionImpl@96e3c7d] will not be managed by Spring
+==>  Preparing: INSERT INTO user_info ( openid, nickname, avatar, gender, create_time, update_time ) VALUES ( ?, ?, ?, ?, ?, ? )
+==> Parameters: mock_openid_1770995395120(String), 宠物主人(String), https://cdn-icons-png.flaticon.com/512/3048/3048122.png(String), 0(Integer), 2026-02-13T23:09:55.287698(LocalDateTime), 2026-02-13T23:09:55.288779(LocalDateTime)
+<==    Updates: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@a20838f]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7df798b6] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@175397854 wrapping com.mysql.cj.jdbc.ConnectionImpl@96e3c7d] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,name,avatar,type,breed,birthday,weight,gender,sterilized,color,status,create_time,update_time,deleted FROM pet WHERE deleted=0 AND (user_id = ?) ORDER BY create_time DESC
+==> Parameters: 14(Long)
+<==      Total: 0
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7df798b6]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7e558d16] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1355310708 wrapping com.mysql.cj.jdbc.ConnectionImpl@96e3c7d] will not be managed by Spring
+==>  Preparing: UPDATE user_info SET nickname=?, avatar=?, gender=?, update_time=? WHERE id=? AND deleted=0
+==> Parameters: 宠物主人(String), https://cdn-icons-png.flaticon.com/512/3048/3048122.png(String), 0(Integer), 2026-02-13T23:09:58.812028(LocalDateTime), 14(Long)
+<==    Updates: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7e558d16]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@73e18f8f] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1837114635 wrapping com.mysql.cj.jdbc.ConnectionImpl@96e3c7d] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,name,avatar,type,breed,birthday,weight,gender,sterilized,color,status,create_time,update_time,deleted FROM pet WHERE deleted=0 AND (user_id = ?) ORDER BY create_time DESC
+==> Parameters: 14(Long)
+<==      Total: 0
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@73e18f8f]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@61953bc9] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@2057191760 wrapping com.mysql.cj.jdbc.ConnectionImpl@96e3c7d] will not be managed by Spring
+==>  Preparing: SELECT id,openid,nickname,avatar,phone,gender,create_time,update_time,deleted FROM user_info WHERE deleted=0 AND (openid = ?)
+==> Parameters: mock_openid_1770995608585(String)
+<==      Total: 0
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@61953bc9]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2e0901f0] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1711942795 wrapping com.mysql.cj.jdbc.ConnectionImpl@96e3c7d] will not be managed by Spring
+==>  Preparing: INSERT INTO user_info ( openid, nickname, avatar, gender, create_time, update_time ) VALUES ( ?, ?, ?, ?, ?, ? )
+==> Parameters: mock_openid_1770995608585(String), 宠物主人(String), https://cdn-icons-png.flaticon.com/512/3048/3048122.png(String), 0(Integer), 2026-02-13T23:13:28.677847(LocalDateTime), 2026-02-13T23:13:28.678412(LocalDateTime)
+<==    Updates: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2e0901f0]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@660666b] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@333995396 wrapping com.mysql.cj.jdbc.ConnectionImpl@96e3c7d] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,name,avatar,type,breed,birthday,weight,gender,sterilized,color,status,create_time,update_time,deleted FROM pet WHERE deleted=0 AND (user_id = ?) ORDER BY create_time DESC
+==> Parameters: 15(Long)
+<==      Total: 0
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@660666b]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1a07daf7] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@2089288206 wrapping com.mysql.cj.jdbc.ConnectionImpl@96e3c7d] will not be managed by Spring
+==>  Preparing: UPDATE user_info SET nickname=?, avatar=?, gender=?, update_time=? WHERE id=? AND deleted=0
+==> Parameters: 宠物主人(String), https://cdn-icons-png.flaticon.com/512/3048/3048122.png(String), 0(Integer), 2026-02-13T23:13:32.034606(LocalDateTime), 15(Long)
+<==    Updates: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1a07daf7]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@365b5055] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@819793457 wrapping com.mysql.cj.jdbc.ConnectionImpl@96e3c7d] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,name,avatar,type,breed,birthday,weight,gender,sterilized,color,status,create_time,update_time,deleted FROM pet WHERE deleted=0 AND (user_id = ?) ORDER BY create_time DESC
+==> Parameters: 15(Long)
+<==      Total: 0
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@365b5055]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6daedc8e] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1857872788 wrapping com.mysql.cj.jdbc.ConnectionImpl@75f6facf] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,name,avatar,type,breed,birthday,weight,gender,sterilized,color,status,create_time,update_time,deleted FROM pet WHERE deleted=0 AND (user_id = ?) ORDER BY create_time DESC
+==> Parameters: 15(Long)
+<==      Total: 0
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6daedc8e]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1d26f8bc] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1557520774 wrapping com.mysql.cj.jdbc.ConnectionImpl@75f6facf] will not be managed by Spring
+==>  Preparing: SELECT id,openid,nickname,avatar,phone,gender,create_time,update_time,deleted FROM user_info WHERE deleted=0 AND (openid = ?)
+==> Parameters: mock_openid_1770995808256(String)
+<==      Total: 0
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1d26f8bc]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@167a6c48] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1018402083 wrapping com.mysql.cj.jdbc.ConnectionImpl@75f6facf] will not be managed by Spring
+==>  Preparing: INSERT INTO user_info ( openid, nickname, avatar, gender, create_time, update_time ) VALUES ( ?, ?, ?, ?, ?, ? )
+==> Parameters: mock_openid_1770995808256(String), 宠物主人(String), https://cdn-icons-png.flaticon.com/512/3048/3048122.png(String), 0(Integer), 2026-02-13T23:16:48.339479(LocalDateTime), 2026-02-13T23:16:48.340617(LocalDateTime)
+<==    Updates: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@167a6c48]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@15d2608c] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1195209245 wrapping com.mysql.cj.jdbc.ConnectionImpl@75f6facf] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,name,avatar,type,breed,birthday,weight,gender,sterilized,color,status,create_time,update_time,deleted FROM pet WHERE deleted=0 AND (user_id = ?) ORDER BY create_time DESC
+==> Parameters: 16(Long)
+<==      Total: 0
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@15d2608c]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@48553749] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@926372923 wrapping com.mysql.cj.jdbc.ConnectionImpl@75f6facf] will not be managed by Spring
+==>  Preparing: UPDATE user_info SET nickname=?, avatar=?, gender=?, update_time=? WHERE id=? AND deleted=0
+==> Parameters: 宠物主人(String), https://cdn-icons-png.flaticon.com/512/3048/3048122.png(String), 0(Integer), 2026-02-13T23:16:51.646951(LocalDateTime), 16(Long)
+<==    Updates: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@48553749]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@40df26f8] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@2060649109 wrapping com.mysql.cj.jdbc.ConnectionImpl@75f6facf] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,name,avatar,type,breed,birthday,weight,gender,sterilized,color,status,create_time,update_time,deleted FROM pet WHERE deleted=0 AND (user_id = ?) ORDER BY create_time DESC
+==> Parameters: 16(Long)
+<==      Total: 0
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@40df26f8]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5ad9da7a] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@331657689 wrapping com.mysql.cj.jdbc.ConnectionImpl@75f6facf] will not be managed by Spring
+==>  Preparing: INSERT INTO pet ( user_id, name, avatar, type, breed, gender, sterilized, color, create_time, update_time ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )
+==> Parameters: 16(Long), 43(String), (String), 2(Integer), 2(String), 0(Integer), 0(Integer), (String), 2026-02-13T23:17:07.365687(LocalDateTime), 2026-02-13T23:17:07.366704(LocalDateTime)
+<==    Updates: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5ad9da7a]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@67d2847f] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1652876752 wrapping com.mysql.cj.jdbc.ConnectionImpl@75f6facf] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,name,avatar,type,breed,birthday,weight,gender,sterilized,color,status,create_time,update_time,deleted FROM pet WHERE deleted=0 AND (user_id = ?) ORDER BY create_time DESC
+==> Parameters: 16(Long)
+<==    Columns: id, user_id, name, avatar, type, breed, birthday, weight, gender, sterilized, color, status, create_time, update_time, deleted
+<==        Row: 4, 16, 43, , 2, 2, null, null, 0, 0, , 0, 2026-02-13 23:17:07, 2026-02-13 23:17:07, 0
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@67d2847f]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@42434b] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@615969238 wrapping com.mysql.cj.jdbc.ConnectionImpl@75f6facf] will not be managed by Spring
+==>  Preparing: SELECT id,pet_id,user_id,hospital,doctor,diagnosis,symptoms,prescription,cost,visit_date,images,create_time,update_time,deleted FROM medical_record WHERE deleted=0 AND (pet_id = ?) ORDER BY visit_date DESC
+==> Parameters: 1(Long)
+<==      Total: 0
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@42434b]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5e9e7393] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@850090477 wrapping com.mysql.cj.jdbc.ConnectionImpl@75f6facf] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,name,avatar,type,breed,birthday,weight,gender,sterilized,color,status,create_time,update_time,deleted FROM pet WHERE deleted=0 AND (user_id = ?) ORDER BY create_time DESC
+==> Parameters: 16(Long)
+<==    Columns: id, user_id, name, avatar, type, breed, birthday, weight, gender, sterilized, color, status, create_time, update_time, deleted
+<==        Row: 4, 16, 43, , 2, 2, null, null, 0, 0, , 0, 2026-02-13 23:17:07, 2026-02-13 23:17:07, 0
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5e9e7393]
+2026-02-13T23:18:51.200+08:00  WARN 20705 --- [aipetbrain] [nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.math.BigDecimal'; Character n is neither a decimal digit number, decimal point, nor "e" notation exponential mark.]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@41030824] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1639552938 wrapping com.mysql.cj.jdbc.ConnectionImpl@75f6facf] will not be managed by Spring
+==>  Preparing: SELECT id,openid,nickname,avatar,phone,gender,create_time,update_time,deleted FROM user_info WHERE deleted=0 AND (openid = ?)
+==> Parameters: mock_openid_1770996220200(String)
+<==      Total: 0
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@41030824]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@17398f84] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1310910319 wrapping com.mysql.cj.jdbc.ConnectionImpl@75f6facf] will not be managed by Spring
+==>  Preparing: INSERT INTO user_info ( openid, nickname, avatar, gender, create_time, update_time ) VALUES ( ?, ?, ?, ?, ?, ? )
+==> Parameters: mock_openid_1770996220200(String), 宠物主人(String), https://cdn-icons-png.flaticon.com/512/3048/3048122.png(String), 0(Integer), 2026-02-13T23:23:40.306116(LocalDateTime), 2026-02-13T23:23:40.307486(LocalDateTime)
+<==    Updates: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@17398f84]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@14b620e4] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@308733182 wrapping com.mysql.cj.jdbc.ConnectionImpl@75f6facf] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,name,avatar,type,breed,birthday,weight,gender,sterilized,color,status,create_time,update_time,deleted FROM pet WHERE deleted=0 AND (user_id = ?) ORDER BY create_time DESC
+==> Parameters: 17(Long)
+<==      Total: 0
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@14b620e4]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@40d959bc] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@131092675 wrapping com.mysql.cj.jdbc.ConnectionImpl@75f6facf] will not be managed by Spring
+==>  Preparing: UPDATE user_info SET nickname=?, avatar=?, gender=?, update_time=? WHERE id=? AND deleted=0
+==> Parameters: 宠物主人(String), https://cdn-icons-png.flaticon.com/512/3048/3048122.png(String), 0(Integer), 2026-02-13T23:23:44.832460(LocalDateTime), 17(Long)
+<==    Updates: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@40d959bc]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1e0766b3] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@668367725 wrapping com.mysql.cj.jdbc.ConnectionImpl@75f6facf] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,name,avatar,type,breed,birthday,weight,gender,sterilized,color,status,create_time,update_time,deleted FROM pet WHERE deleted=0 AND (user_id = ?) ORDER BY create_time DESC
+==> Parameters: 17(Long)
+<==      Total: 0
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1e0766b3]
+2026-02-13T23:24:06.440+08:00  WARN 20705 --- [aipetbrain] [nio-8080-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.math.BigDecimal'; Character n is neither a decimal digit number, decimal point, nor "e" notation exponential mark.]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6a25022e] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@422019689 wrapping com.mysql.cj.jdbc.ConnectionImpl@75f6facf] will not be managed by Spring
+==>  Preparing: SELECT id,openid,nickname,avatar,phone,gender,create_time,update_time,deleted FROM user_info WHERE deleted=0 AND (openid = ?)
+==> Parameters: mock_openid_1770996496158(String)
+<==      Total: 0
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6a25022e]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6325cf40] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@559125880 wrapping com.mysql.cj.jdbc.ConnectionImpl@75f6facf] will not be managed by Spring
+==>  Preparing: INSERT INTO user_info ( openid, nickname, avatar, gender, create_time, update_time ) VALUES ( ?, ?, ?, ?, ?, ? )
+==> Parameters: mock_openid_1770996496158(String), 宠物主人(String), https://cdn-icons-png.flaticon.com/512/3048/3048122.png(String), 0(Integer), 2026-02-13T23:28:16.238292(LocalDateTime), 2026-02-13T23:28:16.239159(LocalDateTime)
+<==    Updates: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6325cf40]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5308cc86] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1094882743 wrapping com.mysql.cj.jdbc.ConnectionImpl@75f6facf] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,name,avatar,type,breed,birthday,weight,gender,sterilized,color,status,create_time,update_time,deleted FROM pet WHERE deleted=0 AND (user_id = ?) ORDER BY create_time DESC
+==> Parameters: 18(Long)
+<==      Total: 0
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5308cc86]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5f04ffb] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@607769067 wrapping com.mysql.cj.jdbc.ConnectionImpl@75f6facf] will not be managed by Spring
+==>  Preparing: UPDATE user_info SET nickname=?, avatar=?, gender=?, update_time=? WHERE id=? AND deleted=0
+==> Parameters: 宠物主人(String), https://cdn-icons-png.flaticon.com/512/3048/3048122.png(String), 0(Integer), 2026-02-13T23:28:19.531246(LocalDateTime), 18(Long)
+<==    Updates: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5f04ffb]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7cd0dee2] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1979266821 wrapping com.mysql.cj.jdbc.ConnectionImpl@75f6facf] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,name,avatar,type,breed,birthday,weight,gender,sterilized,color,status,create_time,update_time,deleted FROM pet WHERE deleted=0 AND (user_id = ?) ORDER BY create_time DESC
+==> Parameters: 18(Long)
+<==      Total: 0
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7cd0dee2]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7cda33f6] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@630897309 wrapping com.mysql.cj.jdbc.ConnectionImpl@75f6facf] will not be managed by Spring
+==>  Preparing: SELECT id,openid,nickname,avatar,phone,gender,create_time,update_time,deleted FROM user_info WHERE deleted=0 AND (openid = ?)
+==> Parameters: mock_openid_1770996798852(String)
+<==      Total: 0
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7cda33f6]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1e698d5d] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@864114917 wrapping com.mysql.cj.jdbc.ConnectionImpl@75f6facf] will not be managed by Spring
+==>  Preparing: INSERT INTO user_info ( openid, nickname, avatar, gender, create_time, update_time ) VALUES ( ?, ?, ?, ?, ?, ? )
+==> Parameters: mock_openid_1770996798852(String), 宠物主人(String), https://cdn-icons-png.flaticon.com/512/3048/3048122.png(String), 0(Integer), 2026-02-13T23:33:18.946423(LocalDateTime), 2026-02-13T23:33:18.947034(LocalDateTime)
+<==    Updates: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1e698d5d]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@40762eb6] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1709344604 wrapping com.mysql.cj.jdbc.ConnectionImpl@75f6facf] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,name,avatar,type,breed,birthday,weight,gender,sterilized,color,status,create_time,update_time,deleted FROM pet WHERE deleted=0 AND (user_id = ?) ORDER BY create_time DESC
+==> Parameters: 19(Long)
+<==      Total: 0
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@40762eb6]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1266175e] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@418953239 wrapping com.mysql.cj.jdbc.ConnectionImpl@75f6facf] will not be managed by Spring
+==>  Preparing: UPDATE user_info SET nickname=?, avatar=?, gender=?, update_time=? WHERE id=? AND deleted=0
+==> Parameters: 宠物主人(String), https://cdn-icons-png.flaticon.com/512/3048/3048122.png(String), 0(Integer), 2026-02-13T23:33:22.580272(LocalDateTime), 19(Long)
+<==    Updates: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1266175e]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@57056b82] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1922215215 wrapping com.mysql.cj.jdbc.ConnectionImpl@75f6facf] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,name,avatar,type,breed,birthday,weight,gender,sterilized,color,status,create_time,update_time,deleted FROM pet WHERE deleted=0 AND (user_id = ?) ORDER BY create_time DESC
+==> Parameters: 19(Long)
+<==      Total: 0
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@57056b82]

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aipetbrain.mapper.UserPetMapper">
+
+    <!-- 查询用户拥有的所有宠物ID -->
+    <select id="selectPetIdsByUserId" resultType="java.lang.Long">
+        SELECT DISTINCT pet_id
+        FROM user_pet
+        WHERE user_id = #{userId} AND deleted = 0
+    </select>
+
+    <!-- 查询宠物的所有可访问用户 -->
+    <select id="selectUsersByPetId" resultType="com.aipetbrain.entity.UserPet">
+        SELECT *
+        FROM user_pet
+        WHERE pet_id = #{petId} AND deleted = 0
+        ORDER BY create_time ASC
+    </select>
+
+</mapper>
+

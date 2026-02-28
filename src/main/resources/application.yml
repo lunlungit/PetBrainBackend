@@ -1,0 +1,76 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+
+spring:
+  application:
+    name: aipetbrain
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/aipetbrain?characterEncoding=UTF8&useSSL=false&serverTimezone=GMT%2B8
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+  redis:
+    host: localhost
+    port: 6379
+    password:
+    database: 0
+    timeout: 3000ms
+    lettuce:
+      pool:
+        max-active: 8
+        max-wait: -1ms
+        max-idle: 8
+        min-idle: 0
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      id-type: auto
+      logic-delete-field: deleted
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+  mapper-locations: classpath*:mapper/**/*.xml
+
+# JWT配置
+jwt:
+  secret: aipetbrain-secret-key-2024-very-long-and-secure
+  expiration: 2592000  # 30天
+
+# 文件上传配置
+file:
+  upload-path: /Users/lunlundemac/repos-ai/AIPetBrainLun/uploads/
+  base-url: http://localhost:8080/api/files/
+
+# 应用配置
+app:
+  # 分享链接的基础 URL（本地开发环境）
+  share-base-url: http://localhost:8080/api
+
+# Hugging Face AI配置
+huggingface:
+  # API Token（在 https://huggingface.co/settings/tokens 生成）
+  api-token: ${HUGGINGFACE_API_TOKEN}
+  # 是否启用真实AI（false=使用模拟数据，true=调用HuggingFace API）
+  enabled: true
+  # 模型配置 - 使用稳定可靠的模型
+  pet-model: google/vit-base-patch16-224
+  object-model: facebook/detr-resnet50
+
+# 微信小程序配置
+wechat:
+  # 小程序AppID（在微信小程序后台获取）
+  appid: ${WECHAT_APPID}
+  # 小程序AppSecret（在微信小程序后台获取）
+  secret: ${WECHAT_SECRET}
+
